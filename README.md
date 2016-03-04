@@ -1,5 +1,6 @@
-# TableViewSectionIndex
-解决tableviewSectionindex不能平均的问题
+#### TableViewSectionIndex
+####解决tableviewSectionindex不能平均的问题
+
 最近的新项目有一个如下的界面
 ![系统中有index的tableview](http://upload-images.jianshu.io/upload_images/661867-bbbd2c97a5fe146c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
