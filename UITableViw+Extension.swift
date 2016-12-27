@@ -85,7 +85,7 @@ extension UITableView {
 class YWIndexView : UIView {
     var sectionTitles : [String]?
     var sectionIndexMinimumDisplayRowCount:Int = 2
-    var letterColor = UIColor(hex: 0x558DD7)
+    var letterColor = UIColor(red: 85.0/255.0, green: 141.0/255.0, blue: 215.0/255.0, alpha: 1)
     var letterFont : UIFont = UIFont.systemFont(ofSize: 12)
     var letterTrackingColor : UIColor = UIColor(red: 27 / 255.0, green: 61 / 255.0, blue: 249 / 255.0, alpha: 1)
     var indexBgColor : UIColor = UIColor.clear

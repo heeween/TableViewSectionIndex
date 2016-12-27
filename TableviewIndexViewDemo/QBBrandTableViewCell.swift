@@ -15,7 +15,7 @@ class QGBrandCell : UITableViewCell {
     //    var topSeperator : UIView?
     var brandLevelTwo: QGBrandLevelTwo?{
         didSet {
-            iconView?.sd_setImageWithURL(NSURL(string: (brandLevelTwo?.imagePath)!))
+            iconView?.sd_setImage(with: URL(string: (brandLevelTwo?.imagePath)!))
             titleLabel?.text = brandLevelTwo?.name
         }
     }
@@ -24,22 +24,22 @@ class QGBrandCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         iconView = UIImageView()
         titleLabel = UILabel()
-        titleLabel?.font = UIFont.systemFontOfSize(14)
-        iconView?.contentMode = .ScaleAspectFit
+        titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        iconView?.contentMode = .scaleAspectFit
         iconView?.clipsToBounds = true
-        iconView?.backgroundColor = UIColor.whiteColor()
-        contentView.backgroundColor = UIColor.whiteColor()
+        iconView?.backgroundColor = UIColor.white
+        contentView.backgroundColor = UIColor.white
         addSubview(iconView!)
         addSubview(titleLabel!)
-        iconView?.snp_makeConstraints(closure: { (make) -> Void in
+        iconView?.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(self.contentView).offset(20)
             make.top.equalTo(self.contentView).offset(9.5)
             make.width.equalTo(42.5)
             make.height.equalTo(25)
         })
-        titleLabel?.snp_makeConstraints(closure: { (make) -> Void in
-            make.left.equalTo((self.iconView?.snp_right)!).offset(15)
-            make.centerY.equalTo(self.iconView!.snp_centerY)
+        titleLabel?.snp.makeConstraints({ (make) -> Void in
+            make.left.equalTo((self.iconView?.snp.right)!).offset(15)
+            make.centerY.equalTo(self.iconView!.snp.centerY)
         })
     }
     
@@ -76,7 +76,7 @@ class QGBrandLevelTwo:NSObject {
         super.init()
         
         if let id = dict["id"]{
-            ID = String(id)
+            ID = String(describing: id)
         }
         name = dict["name"] as? String
         imagePath = dict["imagePath"] as? String
